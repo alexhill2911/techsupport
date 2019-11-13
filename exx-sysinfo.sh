@@ -18,6 +18,7 @@ case "$ID" in
 # ========= Variables ==========
 ################################
 
+FILE=$(hostname)_$(date +%Y%m%d).txt
 NvidiaDriverVersion=$(cat /proc/driver/nvidia/version )
 DockerVersion=$(docker version | egrep -A1 Client)
 NvidiaDockerVer=$(yum list installed | grep nvidia-docker2 | awk '{print $2}' )
@@ -77,6 +78,7 @@ ubuntu*)
 # ========= Variables ==========
 ################################
 
+FILE=$(hostname)_$(date +%Y%m%d).txt
 NvidiaDriverVersion=$(cat /proc/driver/nvidia/version )
 DockerVersion=$(docker version | egrep -A1 Client)
 NvidiaDockerVer=$(dpkg -l | grep nvidia-docker2 | awk '{print $2"      "$3}')
